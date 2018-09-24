@@ -29,7 +29,7 @@
                 <td th:if="${employee.imageFileName.empty}">
                     No photo found.
                 </td>
-                <td style="max-width: 100px;">
+                <td th:if="${!employee.imageFileName.empty}" style="max-width: 100px;">
                     <img style="max-width: 80%;" src="/files/" th:src="'http://localhost:8080/files/' + ${employee.imageFileName}">
                 </td>
                 <td>
