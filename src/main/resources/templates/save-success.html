@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Save Success!</title>
+    <link rel="stylesheet"
+          href="/static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body th:class="container">
+    <h1>Success! You submitted: </h1>
+    <p th:text="'First Name: ' + ${employee.firstName}" ></p>
+    <p th:text="'Last Name: ' + ${employee.lastName}" ></p>
+    <p th:text="'Title: ' + ${employee.title}" ></p>
+    <p th:text="'Practice: ' + ${employee.practice}" ></p>
+    <p th:text="'Domain: ' + ${employee.domain}" ></p>
+    <!--<p th:text="'Practice Lead: ' + ${employee.practiceLead}" ></p>
+    <p th:text="'Domain Lead: ' + ${employee.domainLead}" ></p>-->
+    <a href="/new-employee">Enter another employee</a> <a href="/">See all employees</a>
+</body>
+</html>

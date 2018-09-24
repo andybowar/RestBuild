@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>New Employee</title>
+    <link rel="stylesheet"
+          href="/static/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body th:class="container">
+    <div th:class="row"><h1>New Employee</h1></div>
+    <form action="/new-employee"
+          th:class="col-lg-3"
+          th:action="@{/new-employee}"
+          th:object="${employee}" method="post"
+          th:modelAttribute="employee"
+          enctype="multipart/form-data">
+        <div th:class="form-group" >
+            First Name: <input th:class="form-control" type="text" th:field="*{firstName}" />
+        </div>
+        <div th:class="form-group" >
+            Last Name: <input th:class="form-control" type="text" th:field="*{lastName}" />
+        </div>
+        <div th:class="form-group" >
+            Title: <input th:class="form-control" type="text" th:field="*{title}" />
+        </div>
+        <div th:class="form-group" >
+            Practice: <input th:class="form-control" type="text" th:field="*{practice}" />
+        </div>
+        <div th:class="form-group" >
+            Domain: <input th:class="form-control" type="text" th:field="*{domain}" />
+        </div>
+        <!--<label th:for="practiceLead" th:text="'Practice Lead:'"></label>
+        <input type="radio" th:field="*{practiceLead}" value="true"/> Yes
+        <input type="radio" th:field="*{practiceLead}" value="false"/> No
+        <br />
+        <label th:for="domainLead" th:text="'Domain Lead:'"></label>
+        <input type="radio" th:field="*{domainLead}" value="true" /> Yes
+        <input type="radio" th:field="*{domainLead}" value="false" /> No-->
+        <div th:class="form-group">
+            <label for="imageFileUpload">File to upload: </label>
+            <input type="file" th:class="form-control-file" name="file" id="imageFileUpload"/>
+        </div>
+        <!--<tr><td></td><td><input type="submit" value="Upload" /></td></tr>-->
+        <p><input type="submit" th:class="btn + ' ' + btn-primary" value="Submit" /> <input th:class="btn + ' ' + btn-secondary" type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
